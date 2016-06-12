@@ -1,16 +1,4 @@
-/*
- |--------------------------------------------------------------------------
- | Browser-sync config file
- |--------------------------------------------------------------------------
- |
- | For up-to-date information about the options:
- |   http://www.browsersync.io/docs/options/
- |
- | There are more options than you see here, these are just the ones that are
- | set internally. See the website for more info.
- |
- |
- */
+
 const proxy = require('http-proxy-middleware');
 // proxy API rest calls ['author', 'message'] to the json-server on localhost:8080
 const authorApi = proxy('/author', { // all requests to /api/** => will redirect on http://localhost:8080/api/**
@@ -25,14 +13,7 @@ const messageApi = proxy('/message', { // all requests to /api/** => will redire
 });
 
 module.exports = {
-  "ui": {
-    "port": 3001,
-    "weinre": {
-      "port": 8080
-    }
-  },
-  "files": false,
-  "watchOptions": {},
+
   "server": {
     "baseDir": "./dist/",
      "middleware": [
@@ -40,8 +21,29 @@ module.exports = {
         messageApi
       ]
   },
-  "proxy": false,
+
   "port": 3000,
+
+  "ui": { "port": 3001 },
+
+  /*
+   |
+   | other default generated settings...
+   |
+   |--------------------------------------------------------------------------
+   | Browser-sync config file
+   |--------------------------------------------------------------------------
+   |
+   | For up-to-date information about the options:
+   |   http://www.browsersync.io/docs/options/
+   |
+   | There are more options than you see here, these are just the ones that are
+   | set internally. See the website for more info.
+   */
+
+  "files": false,
+  "watchOptions": {},
+  "proxy": false,
   "middleware": false,
   "serveStatic": [],
   "ghostMode": {
