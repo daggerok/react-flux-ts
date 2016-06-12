@@ -10,7 +10,7 @@ module.exports = {
   devtool: 'cheap-module-source-map',
 
   entry: {
-    index: './src/index.tsx'
+    app: './src/index.tsx'
   },
 
   output: {
@@ -70,7 +70,7 @@ module.exports = {
       {from: 'node_modules/bootstrap/dist/css/bootstrap.min.css', to: 'vendor/bootstrap'},
       {from: 'node_modules/bootstrap/dist/fonts', to: 'vendor/bootstrap'}
     ]),
-    new ExtractTextPlugin('index.bundle.css'),
+    new ExtractTextPlugin('app.bundle.css'),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.optimize\.css$/g,
       cssProcessor: require('cssnano'),

@@ -4,7 +4,7 @@
   "description": "react react-router flux typescript webpack",
   "main": "./src/index.tsx",
   "scripts": {
-    "mocked-backend": "json-server -s dist -p 8080 -w config/json-server.db.json",
+    "mocked-backend": "json-server -s dist -p 8080 -w config/json-server.json",
     "test": "tslint -c config/tslint.json 'src/**/*.tsx'",
     "start": "npm i; npm run dev-in-parallel",
     "dev-in-parallel": "npm-run-all --parallel wp:dev mocked-backend",
@@ -20,7 +20,8 @@
     "postinstall": "npm-run-all typings:*",
     "typings:rm": "rimraf typings*",
     "typings:init": "typings init ./src",
-    "typings:install": "typings install --global --save dt~react dt~react-dom dt~react-router dt~react-router/history dt~flux dt~jquery dt~bootstrap",
+    "typings:vendor": "typings install --global --save dt~jquery dt~bootstrap",
+    "typings:react": "typings i -G --save dt~react dt~react-dom dt~react-router dt~react-router/history dt~flux",
     "commit": "commit-wizard"
   },
   "config": {

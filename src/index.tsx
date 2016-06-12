@@ -45,9 +45,9 @@ const app: HTMLElement = document.getElementById('app');
 window.addEventListener('hashchange', renderApp);
 
 function renderApp() {
-  let route = window.location.hash.substr(1);
   // ReactDOM.render(<Home/>, app);
   // ReactDOM.render(<About keywords={keywords}/>, app);
+  let route = window.location.hash.substr(1);
   console.log('navigate to:', route, 'page.');
   ReactDOM.render(<App route={route}/>, app);
 }
