@@ -7,8 +7,9 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
 import { Header } from './index/common/Header';
-import { About } from './index/About';
 import { Home } from './index/Home';
+import { Authors } from './index/authors/Authors';
+import { About } from './index/About';
 
 const keywords = [
   'TypeScript',
@@ -23,18 +24,18 @@ interface AppProps {
 
 class App extends React.Component<AppProps, {}> {
   render() {
-    let component = <Home />;
+    let DOM = <Home />;
 
-    if (null != this.props.route
-      && this.props.route.toLowerCase() === 'about') {
-
-      component = <About keywords={keywords}/>;
+    if ('about' === this.props.route.toLowerCase()) {
+      DOM = <About keywords={keywords}/>;
+    } else if ('authors' === this.props.route.toLowerCase()) {
+      DOM = <Authors />;
     }
 
     return (
       <div>
         <Header />
-        {component}
+        {DOM}
       </div>
     );
   }
