@@ -13,6 +13,7 @@ export class ReactFluxTsApp extends React.Component<Props, {}> {
   public render() {
     return (
       <div className='container'>
+        {/*jsx attrs: className instead of class, htmlFor instead of for*/}
         <h3 className='panel'>hi!</h3>
         <div>lets learn something</div>
         <ul className="list-style-none">

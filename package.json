@@ -18,10 +18,14 @@
     "postinstall": "npm-run-all typings:*",
     "typings:rm": "rimraf typings*",
     "typings:init": "typings init ./src",
-    "typings:install": "typings install --global --save dt~react dt~react-dom dt~flux dt~jquery dt~bootstrap"
+    "typings:install": "typings install --global --save dt~react dt~react-dom dt~react-router dt~react-router/history dt~flux dt~jquery dt~bootstrap"
   },
   "author": "Maksim Kostromin",
   "license": "ISC",
+  "peerDependencies": {
+    "react": "^0.14.0 || ^15.1.0",
+    "react-router": "^2.0.0 || ^2.4.1"
+  },
   "devDependencies": {
     "browser-sync": "^2.13.0",
     "copy-webpack-plugin": "^3.0.1",
@@ -47,7 +51,8 @@
     "flux": "^2.1.1",
     "jquery": "^3.0.0",
     "react": "^15.1.0",
-    "react-dom": "^15.1.0"
+    "react-dom": "^15.1.0",
+    "react-router": "^2.4.1"
   },
   "repository": {
     "type": "git",
