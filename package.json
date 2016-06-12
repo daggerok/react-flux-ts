@@ -1,7 +1,7 @@
 {
   "name": "react-flux-ts",
   "version": "1.0.0",
-  "description": "react flux typescript webpack",
+  "description": "react react-router flux typescript webpack",
   "main": "./src/index.tsx",
   "scripts": {
     "test": "tslint -c config/tslint.json 'src/**/*.tsx'",

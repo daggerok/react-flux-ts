@@ -10,19 +10,19 @@ module.exports = {
   devtool: 'cheap-module-source-map',
 
   entry: {
-    js: './src/index.tsx'
+    index: './src/index.tsx'
   },
 
   output: {
-    path: './dist/',
-    filename: 'bundle.[name]',
+    path: './dist',
+    filename: '[name].bundle.js',
     // save maps outside build folder
-    sourceMapFilename: './maps/[file].map'
+    sourceMapFilename: 'maps/[file].map'
   },
 
   resolve: {
     // Add '.ts' and '.tsx' as resolvable extensions.
-    extensions: ['', 'webpack.js', '.ts', '.tsx', '.js']
+    extensions: ['', '.ts', '.tsx', '.js']
   },
 
   module: {
@@ -62,15 +62,15 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       // react
-      {from: './node_modules/react/dist/react.min.js', to: 'vendor/react'},
-      {from: './node_modules/react-dom/dist/react-dom.min.js', to: 'vendor/react'},
+      {from: 'node_modules/react/dist/react.min.js', to: 'vendor'},
+      {from: 'node_modules/react-dom/dist/react-dom.min.js', to: 'vendor'},
       // jquery
-      {from: './node_modules/jquery/dist/jquery.min.js', to: 'vendor/jquery'},
+      {from: 'node_modules/jquery/dist/jquery.min.js', to: 'vendor'},
       // bootstrap
-      {from: './node_modules/bootstrap/dist/css/bootstrap.min.css', to: 'vendor/bootstrap'},
-      {from: './node_modules/bootstrap/dist/fonts', to: 'vendor/bootstrap'}
+      {from: 'node_modules/bootstrap/dist/css/bootstrap.min.css', to: 'vendor/bootstrap'},
+      {from: 'node_modules/bootstrap/dist/fonts', to: 'vendor/bootstrap'}
     ]),
-    new ExtractTextPlugin('bundle.css'),
+    new ExtractTextPlugin('index.bundle.css'),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.optimize\.css$/g,
       cssProcessor: require('cssnano'),

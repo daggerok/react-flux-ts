@@ -3,13 +3,13 @@
  */
 import * as React from 'react';
 
-import { ReactFluxTsAppComponentStyles } from './ReactFluxTsApp.css';
+import { AboutComponentStyles } from './About.css';
 
 interface Props {
   keywords?: string[];
 }
 
-export class ReactFluxTsApp extends React.Component<Props, {}> {
+export class About extends React.Component<Props, {}> {
   public render() {
     return (
       <div className='container'>
@@ -21,7 +21,7 @@ export class ReactFluxTsApp extends React.Component<Props, {}> {
           <li>...?</li>
         </ul>
         <img src="http://cdn.shopify.com/s/files/1/0860/3518/products/rightmeow_comp.jpg?v=1432861786" alt=""/>
-        <div style={ReactFluxTsAppComponentStyles}>testing pragmatically assigned styles from react component</div>
+        <div style={AboutComponentStyles}>testing pragmatically assigned styles from react component</div>
       </div>
     );
   }
