@@ -8,7 +8,7 @@ import * as ReactDOM from 'react-dom';
 
 import { Header } from './index/common/Header';
 import { Home } from './index/Home';
-import { Authors } from './index/authors/Authors';
+import { AuthorList } from './index/author/AuthorList';
 import { About } from './index/About';
 
 const keywords = [
@@ -29,7 +29,7 @@ class App extends React.Component<AppProps, {}> {
     if ('about' === this.props.route.toLowerCase()) {
       DOM = <About keywords={keywords}/>;
     } else if ('authors' === this.props.route.toLowerCase()) {
-      DOM = <Authors />;
+      DOM = <AuthorList />;
     }
 
     return (

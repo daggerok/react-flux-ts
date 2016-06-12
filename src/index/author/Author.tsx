@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { AuthorDTO } from './model/AuthorDTO';
+import { AuthorDTO } from './AuthorDTO';
 
 interface Props {
   authorDto: AuthorDTO;

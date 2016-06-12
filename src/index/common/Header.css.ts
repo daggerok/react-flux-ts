@@ -3,6 +3,6 @@
  */
 import { AboutComponentStyles } from '../About.css';
 
-export const headerComponentStyles = (<any>Object).assign({}, AboutComponentStyles, {
+export const headerComponentStyles = (<any>Object).assign({
   display: 'inline'
-});
+}, AboutComponentStyles);

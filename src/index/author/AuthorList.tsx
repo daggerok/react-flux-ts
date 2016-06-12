@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { Author } from './Author';
-import { AuthorDTO } from './model/AuthorDTO';
+import { AuthorDTO } from './AuthorDTO';
 
 interface Props {}
 interface State {
   authors: AuthorDTO[];
 }
 
-export class Authors extends React.Component<Props, State> {
+export class AuthorList extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {authors: [
