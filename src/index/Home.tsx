@@ -1,5 +1,8 @@
 import * as React from 'react';
 
+/**
+ * Created by mak on 6/12/16.
+ */
 interface HomeProps {}
 
 export class Home extends React.Component<HomeProps, {}> {

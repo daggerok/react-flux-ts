@@ -2,6 +2,9 @@ import * as React from 'react';
 
 import { headerComponentStyles } from './Header.css';
 
+/**
+ * Created by mak on 6/12/16.
+ */
 interface HeaderProps {}
 
 export class Header extends React.Component<HeaderProps, {}> {

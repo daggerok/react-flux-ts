@@ -95,7 +95,8 @@ module.exports = {
     inline: true,
     port: 8000,
     proxy: {
-      '/api': 'http://localhost:8080'
+      '/author': 'http://localhost:8080',
+      '/message': 'http://localhost:8080'
     }
   }
 };

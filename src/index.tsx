@@ -1,6 +1,3 @@
-/**
- * Created by mak on 6/8/16.
- */
 import './index.css';
 
 import * as React from 'react';
@@ -11,16 +8,19 @@ import { Home } from './index/Home';
 import { AuthorList } from './index/author/AuthorList';
 import { About } from './index/About';
 
+/**
+ * Created by mak on 6/8/16.
+ */
+interface AppProps {
+  route: string;
+}
+
 const keywords = [
   'TypeScript',
   'React',
   'React Router',
   'Flux'
 ];
-
-interface AppProps {
-  route: string;
-}
 
 class App extends React.Component<AppProps, {}> {
   render() {
@@ -35,11 +35,12 @@ class App extends React.Component<AppProps, {}> {
     return (
       <div>
         <Header />
-        {DOM}
+        <div className="container-fluid">{DOM}</div>
       </div>
     );
   }
 }
+
 const app: HTMLElement = document.getElementById('app');
 
 window.addEventListener('hashchange', renderApp);
@@ -47,8 +48,9 @@ window.addEventListener('hashchange', renderApp);
 function renderApp() {
   // ReactDOM.render(<Home/>, app);
   // ReactDOM.render(<About keywords={keywords}/>, app);
+
   let route = window.location.hash.substr(1);
-  console.log('navigate to:', route, 'page.');
+  // console.log('navigate to:', route, 'page.');
   ReactDOM.render(<App route={route}/>, app);
 }
 

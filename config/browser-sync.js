@@ -11,14 +11,19 @@
  |
  |
  */
-/*// proxy any '/api' rest call to the server on localhost:8080
- const proxy = require('http-proxy-middleware');
- const devApi = proxy('/api', { // all requests to /api/** => will redirect on http://localhost:8080/api/**
- target: 'http://localhost:8080',
- changeOrigin: true, // for vhosted sites, changes host header to match to target's host
- logLevel: 'debug'
- });
- */
+const proxy = require('http-proxy-middleware');
+// proxy API rest calls ['author', 'message'] to the json-server on localhost:8080
+const authorApi = proxy('/author', { // all requests to /api/** => will redirect on http://localhost:8080/api/**
+  target: 'http://localhost:8080',
+  changeOrigin: true, // for vhosted sites, changes host header to match to target's host
+  logLevel: 'debug'
+});
+const messageApi = proxy('/message', { // all requests to /api/** => will redirect on http://localhost:8080/api/**
+  target: 'http://localhost:8080',
+  changeOrigin: true, // for vhosted sites, changes host header to match to target's host
+  logLevel: 'debug'
+});
+
 module.exports = {
   "ui": {
     "port": 3001,
@@ -29,8 +34,11 @@ module.exports = {
   "files": false,
   "watchOptions": {},
   "server": {
-    "baseDir": "./dist/"/*,
-     "middleware": [devApi] */
+    "baseDir": "./dist/",
+     "middleware": [
+        authorApi,
+        messageApi
+      ]
   },
   "proxy": false,
   "port": 3000,
