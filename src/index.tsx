@@ -6,20 +6,16 @@ import './index.css';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
+import { Header } from './index/common/Header';
 import { About } from './index/About';
 import { Home } from './index/Home';
 
-const app: HTMLElement = document.getElementById('app');
 const keywords = [
   'TypeScript',
   'React',
   'React Router',
   'Flux'
 ];
-const toggleComponent = (route: string) =>
-  (null != route && route.toLowerCase() === 'about')
-    ? <About keywords={keywords}/>
-    : <Home />;
 
 interface AppProps {
   route: string;
@@ -27,19 +23,32 @@ interface AppProps {
 
 class App extends React.Component<AppProps, {}> {
   render() {
-    return toggleComponent(this.props.route);
+    let component = <Home />;
+
+    if (null != this.props.route
+      && this.props.route.toLowerCase() === 'about') {
+
+      component = <About keywords={keywords}/>;
+    }
+
+    return (
+      <div>
+        <Header />
+        {component}
+      </div>
+    );
   }
 }
-
-const getRoute = () => window.location.hash.substr(1);
+const app: HTMLElement = document.getElementById('app');
 
 window.addEventListener('hashChanged', renderApp);
 
 function renderApp() {
+  let route = window.location.hash.substr(1);
   // ReactDOM.render(<Home/>, app);
   // ReactDOM.render(<About keywords={keywords}/>, app);
-  console.log('navigate to:', getRoute(), 'page.');
-  ReactDOM.render(<App route={getRoute()}/>, app);
+  console.log('navigate to:', route, 'page.');
+  ReactDOM.render(<App route={route}/>, app);
 }
 
 renderApp();

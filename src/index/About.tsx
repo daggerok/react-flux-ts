@@ -12,7 +12,7 @@ interface Props {
 export class About extends React.Component<Props, {}> {
   public render() {
     return (
-      <div className='container'>
+      <div className="container-fluid">
         {/*jsx attrs: className instead of class, htmlFor instead of for*/}
         <h3 className='panel'>hi!</h3>
         <div>lets learn something</div>
