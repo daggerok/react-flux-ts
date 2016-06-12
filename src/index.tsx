@@ -32,12 +32,14 @@ class App extends React.Component<AppProps, {}> {
 }
 
 const getRoute = () => window.location.hash.substr(1);
-const renderApp = () => {
-  // ReactDOM.render(<Home/>, app);
-  // ReactDOM.render(<About keywords={keywords}/>, app);
-  console.log('navigate to:', getRoute());
-  ReactDOM.render(<App route={getRoute()}/>, app);
-};
 
 window.addEventListener('hashChanged', renderApp);
+
+function renderApp() {
+  // ReactDOM.render(<Home/>, app);
+  // ReactDOM.render(<About keywords={keywords}/>, app);
+  console.log('navigate to:', getRoute(), 'page.');
+  ReactDOM.render(<App route={getRoute()}/>, app);
+}
+
 renderApp();
