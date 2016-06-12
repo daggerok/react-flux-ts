@@ -1,5 +1,10 @@
 {
-  "messages": [
+  "author": [
+    {"id": 1, "username": "Admin"},
+    {"id": 2, "username": "Guest"},
+    {"id": 3, "username": "Max"}
+  ],
+  "message": [
     {"id": 1, "subject": "subj 1", "body": "body 1"},
     {"id": 2, "subject": "subj 2", "body": "body 2"},
     {"id": 3, "subject": "subj 3", "body": "body 3"}

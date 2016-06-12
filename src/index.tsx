@@ -41,7 +41,7 @@ class App extends React.Component<AppProps, {}> {
 }
 const app: HTMLElement = document.getElementById('app');
 
-window.addEventListener('hashChanged', renderApp);
+window.addEventListener('hashchange', renderApp);
 
 function renderApp() {
   let route = window.location.hash.substr(1);
