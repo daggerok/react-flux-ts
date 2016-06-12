@@ -10,11 +10,12 @@ import { AuthorService } from './AuthorService';
 interface Props {
 }
 
-interface State {
+export interface State {
   authors: AuthorDTO[];
 }
 
 export class AuthorList extends React.Component<Props, State> {
+
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -25,23 +26,37 @@ export class AuthorList extends React.Component<Props, State> {
   }
 
   componentWillMount() {
-    AuthorService.findAll((data: AuthorDTO[]) =>
-      this.setState({ authors: data }));
-  }
+    /*
+    // class ref with state:
+    AuthorService.findAllOtherWay(this);
+    */
 
-  /*
-   componentWillMount() {
-   $.ajax('/author')
-   .then((data: AuthorDTO[]) => {
-   console.log('fetching data..');
-   this.setState({
-   authors: data
-   })
-   })
-   .fail((req: any, status: any, err: any) =>
-   console.log('shit happens.. =[', status));
-   }
-   */
+    AuthorService.findAll(
+      (data: AuthorDTO[]) =>
+        this.setState({ authors: data }));
+
+    /*
+    AuthorService.findAll(
+      (data: AuthorDTO[]) =>
+        this.setState({ authors: data }),
+      (jqXHR: XMLHttpRequest) =>
+        console.info(jqXHR.responseText)
+    );
+    */
+  }
+/*
+  componentWillMount() {
+    $.ajax('/author')
+      .then((data: AuthorDTO[]) => {
+        console.log('fetching data..');
+        this.setState({
+          authors: data
+        })
+      })
+      .fail((req: any, status: any, err: any) =>
+        console.log('shit happens.. =[', status));
+  }
+*/
   componentWillUnmount() {
     this.setState({authors: []});
   }
