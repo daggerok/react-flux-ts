@@ -25,7 +25,7 @@
   },
   "config": {
     "pre-git": {
-      "pre-commit": [
+      "pre-push": [
         "npm test"
       ]
     }
