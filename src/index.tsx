@@ -1,9 +1,7 @@
-import './index.css';
-
-import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
 import { routes } from './routes';
+import './index.css';
 
 /**
  * Created by mak on 6/8/16.
