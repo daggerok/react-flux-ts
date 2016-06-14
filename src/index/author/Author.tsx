@@ -10,6 +10,10 @@ interface Props {
 }
 
 export class Author extends React.Component<Props, {}> {
+  constructor(props: Props) {
+    super(props);
+  }
+
   render() {
     return <div className="container-fluid">
       {this.props.authorDto.id} {this.props.authorDto.username}

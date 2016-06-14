@@ -9,4 +9,6 @@ npm start
 
 links:
 
-- [www.typescriptlang.org](https://www.typescriptlang.org/docs/handbook/react-&-webpack.html)
+- [typescript](https://www.typescriptlang.org/docs/handbook/react-&-webpack.html)
+- [react](https://facebook.github.io/react/)
+- [react-router](https://github.com/reactjs/react-router/tree/v2.0.0/docs)

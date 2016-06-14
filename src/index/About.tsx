@@ -10,6 +10,16 @@ interface Props {
 }
 
 export class About extends React.Component<Props, {}> {
+  constructor(props: Props) {
+    super(props);
+    this.props.keywords = [
+      'TypeScript',
+      'React',
+      'React Router',
+      'Flux'
+    ];
+  }
+
   public render() {
     return (
       <div className="container-fluid">
