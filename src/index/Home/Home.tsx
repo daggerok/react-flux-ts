@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import { Link } from 'react-router';
 /**
  * Created by mak on 6/12/16.
  */
@@ -11,6 +11,7 @@ export class Home extends React.Component<Props, State> {
     return (
       <div className="container-fluid">
         <h4>Home page</h4>
+        <Link to="about"><button className="btn btn-primary btn-lg">meow...</button></Link>
       </div>
     );
   }
