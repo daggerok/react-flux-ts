@@ -19,40 +19,36 @@ export class Home extends React.Component<HomeProps, {}> {
 
   Lifecycle
 
- // before render
- // place for component initial states:
  componentWillMount
+   - before render
+   - place for component initial states:
 
- // after render
- // DOM already exists
- // place to make needed ajax requests
  componentDidMount
+   - after render
+   - DOM already exists
+   - place to make needed ajax requests
 
- // before new property will receive
- // place to state state before render
  componentWillReceiveProps
+   - before new property will receive
+   - place to state state before render
 
  componentDidReceiveProps
 
- // not called on initial render
- // after render, before component will receive new property
- // return false to avoid unnecessary rendering
  shouldComponentUpdate
+   - not called on initial render
+   - after render, before component will receive new property
+   - return false to avoid unnecessary rendering
 
- // not called on initial render
- // call before rendering when new props/state being receive
- // useful to prepare update
- // do not call setState() in this function
  componentWillUpdate
+   - not called on initial render
+   - call before rendering when new props/state being receive
+   - useful to prepare update
+   - do not call setState() in this function
 
- // call after component was updated and re-rendered in the DOM
  componentDidUpdate
+   - call after component was updated and re-rendered in the DOM
 
- // place for cleanup before switching from the page
  componentDidUnmount
+   - place for cleanup before switching from the page
 
- table
-  tbody
-   tr
-    <tr key={id}> required
  */
