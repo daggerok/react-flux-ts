@@ -6,9 +6,10 @@ import { headerStyles, childStyles } from './App.css';
 /**
  * Created by mak on 6/12/16.
  */
-interface AppProps {}
+interface Props {}
+interface State {}
 
-export class App extends React.Component<AppProps, {}> {
+export class App extends React.Component<Props, State> {
   render() {
     return (
       <div>

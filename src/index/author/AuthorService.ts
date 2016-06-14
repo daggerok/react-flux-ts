@@ -1,13 +1,15 @@
 import { AuthorDTO } from './AuthorDTO';
-import { State, AuthorList } from './AuthorList';
+import { AuthorList } from './AuthorList';
 /**
  * Created by mak on 6/12/16.
  */
+const URL = '/author';
+
 export class AuthorService {
 
   public static findAllOtherWay(authorList: AuthorList): any {
 
-    $.get('/author')
+    $.get(URL)
       .then((data: AuthorDTO[]) => authorList.setState({authors: data}))
       .fail(AuthorService.errorLogger);
   }
@@ -27,7 +29,7 @@ export class AuthorService {
   public static findAll(ok: (data: AuthorDTO[]) => any,
                         err?: (jqXHR: XMLHttpRequest) => any): any {
 
-    return $.get('/author')
+    return $.get(URL)
       .then(ok).fail(err || AuthorService.errorLogger);
   }
 

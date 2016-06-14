@@ -4,7 +4,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
 import { About } from './index/About';
 import { Home } from './index/Home';
-import { AuthorList } from './index/author/AuthorList';
+import { AuthorList } from './index/Author';
 import { App } from './index/App';
 
 /**

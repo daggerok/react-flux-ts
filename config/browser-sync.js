@@ -1,6 +1,6 @@
 
 const proxy = require('http-proxy-middleware');
-// proxy API rest calls ['author', 'message'] to the json-server on localhost:8080
+// proxy API rest calls ['Author', 'message'] to the json-server on localhost:8080
 const authorApi = proxy('/author', { // all requests to /api/** => will redirect on http://localhost:8080/api/**
   target: 'http://localhost:8080',
   changeOrigin: true, // for vhosted sites, changes host header to match to target's host

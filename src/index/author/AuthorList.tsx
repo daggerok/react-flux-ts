@@ -46,7 +46,7 @@ export class AuthorList extends React.Component<Props, State> {
   }
 /*
   componentWillMount() {
-    $.ajax('/author')
+    $.ajax('/Author')
       .then((data: AuthorDTO[]) => {
         console.log('fetching data..');
         this.setState({

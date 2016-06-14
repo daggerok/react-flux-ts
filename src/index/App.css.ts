@@ -1,4 +1,4 @@
-import { AboutComponentStyles } from './About.css';
+import { AboutComponentStyles } from './About/About.css';
 
 /**
  * Created by mak on 6/12/16.

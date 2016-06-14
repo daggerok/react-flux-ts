@@ -3,9 +3,10 @@ import * as React from 'react';
 /**
  * Created by mak on 6/12/16.
  */
-interface HomeProps {}
+interface Props {}
+interface State {}
 
-export class Home extends React.Component<HomeProps, {}> {
+export class Home extends React.Component<Props, State> {
   render() {
     return (
       <div className="container-fluid">
