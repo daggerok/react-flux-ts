@@ -5,7 +5,7 @@
   "main": "./src/index.tsx",
   "scripts": {
     "mocked-backend": "json-server -s dist -p 8080 -w config/json-server.json",
-    "test": "tslint -c config/tslint.json 'src/**/*.tsx'",
+    "test": "tslint -c config/tslint.json 'src/**/*.{tsx,ts}'",
     "start": "npm i; npm run dev-in-parallel",
     "dev-in-parallel": "npm-run-all --parallel wp:dev mocked-backend",
     "bs": "npm i; npm-run-all wp:compile start-in-parallel",
