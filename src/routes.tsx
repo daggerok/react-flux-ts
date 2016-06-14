@@ -1,6 +1,6 @@
 import * as React from 'react';
-// import { Router, Route, IndexRoute, browserHistory, Redirect } from 'react-router';
-import { Router, Route, IndexRoute, hashHistory, Redirect } from 'react-router';
+// import { Router, Route, IndexRoute, browserHistory, Redirect, IndexRedirect } from 'react-router';
+import { Router, Route, IndexRoute, hashHistory, Redirect, IndexRedirect } from 'react-router';
 
 import { About } from './index/About';
 import { Home } from './index/Home';
@@ -13,17 +13,23 @@ import { Transition } from './index/Transition';
  * Created by mak on 6/8/16.
  */
 export const routes = (
-  // <Router history={browserHistory}>
+  /*
+  <Router history={browserHistory}>
+   */
   <Router history={hashHistory}>
     <Route path="/" component={App}>
+      {/* specify component for root '/' */}
       <IndexRoute component={Home} />
-      <Route path="/home" component={Home} />
-      <Route path="/authors" component={AuthorList} />
-      <Route path="/transitions" component={Transition} onEnter={Transition.onEnter} onLeave={Transition.onLeave}/>
-      <Route path="/about" component={About} />
-      <Redirect path="/redirect-me" to="/about" />
+      {/* redirect to '/about' component if root '/' */}
+      <IndexRedirect to='about'/>
+      <Route path="home" component={Home} />
+      <Route path="authors" component={AuthorList} />
+      <Route path="transitions" component={Transition} onEnter={Transition.onEnter} onLeave={Transition.onLeave}/>
+      <Route path="about" component={About} />
+      {/* redirect from '/redirect-me' to  must be before not found (any other) handler */}
+      <Redirect path="redirect-me" to="about" />
+      {/* not found route must latest */}
       <Route path="*" component={NotFound} />
-      {/*<Redirect from="about/*" to="about" /> dont work with hash*/}
     </Route>
   </Router>
 );
