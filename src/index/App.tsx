@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link } from 'react-router';
+import { Link, IndexLink } from 'react-router';
 
 import { headerStyles, childStyles } from './App.css';
 
@@ -15,12 +15,14 @@ export class App extends React.Component<Props, State> {
       <div>
         <nav className="navbar navbar-default">
           <div className="container-fluid">
-
-            {/* change the <a>s to <Link>s */}
+            {/*
+             change the <a>s to <Link>s
+             */}
             <ul className="nav navbar-nav" style={headerStyles}>
-              <li><a className="navbar-brand" href="/">Brand</a></li>
+              <li><IndexLink to="/" className="navbar-brand">Brand</IndexLink></li>
               <li><Link to="home">Home</Link></li>
               <li><Link to="authors">Authors</Link></li>
+              <li><Link to="transitions">Transitions</Link></li>
               <li><Link to="about">About</Link></li>
             </ul>
           </div>
