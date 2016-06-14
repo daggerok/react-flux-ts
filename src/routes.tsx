@@ -6,6 +6,7 @@ import { About } from './index/About';
 import { Home } from './index/Home';
 import { AuthorList } from './index/Author';
 import { App } from './index/App';
+import { NotFound } from './index/404';
 
 /**
  * Created by mak on 6/8/16.
@@ -18,6 +19,7 @@ export const routes = (
       <Route path="home" component={Home} />
       <Route path="authors" component={AuthorList} />
       <Route path="about" component={About} />
+      <Route path="*" component={NotFound} />
     </Route>
   </Router>
 );
