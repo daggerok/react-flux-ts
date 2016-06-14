@@ -11,6 +11,7 @@ export class Home extends React.Component<Props, State> {
     return (
       <div className="container-fluid">
         <h4>Home page</h4>
+        <div><a href="#redirect-me-to-about">redirect me to about</a></div>
         <Link to="about"><button className="btn btn-primary btn-lg">meow...</button></Link>
       </div>
     );

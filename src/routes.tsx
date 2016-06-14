@@ -1,6 +1,6 @@
 import * as React from 'react';
-// import { Router, Route, IndexRoute, browserHistory } from 'react-router';
-import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+// import { Router, Route, IndexRoute, browserHistory, Redirect } from 'react-router';
+import { Router, Route, IndexRoute, hashHistory, Redirect } from 'react-router';
 
 import { About } from './index/About';
 import { Home } from './index/Home';
@@ -19,6 +19,7 @@ export const routes = (
       <Route path="home" component={Home} />
       <Route path="authors" component={AuthorList} />
       <Route path="about" component={About} />
+      <Redirect from="redirect-me-to-about" to="about" />
       <Route path="*" component={NotFound} />
     </Route>
   </Router>
