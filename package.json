@@ -22,6 +22,7 @@
     "typings:init": "typings init ./src",
     "typings:vendor": "typings install --global --save dt~jquery dt~bootstrap",
     "typings:react": "typings i -G --save dt~react dt~react-dom dt~react-router dt~react-router/history dt~flux",
+    "typings:transition": "typings install --global --save dt~react-addons-transition-group dt~react-addons-css-transition-group",
     "commit": "commit-wizard"
   },
   "config": {
@@ -35,7 +36,10 @@
   "license": "ISC",
   "peerDependencies": {
     "react": "^15.1.0 || ^0.14.0",
-    "react-router": "^2.4.1 || ^2.0.0"
+    "react-dome": "^15.1.0 || ^0.14.0",
+    "react-router": "^2.4.1 || ^2.0.0",
+    "react-addons-transition-group": "^15.1.0 || ^0.14.0",
+    "react-addons-css-transition-group": "^15.1.0 || ^0.14.0"
   },
   "devDependencies": {
     "browser-sync": "^2.13.0",
@@ -64,6 +68,8 @@
     "flux": "^2.1.1",
     "jquery": "^3.0.0",
     "react": "^15.1.0",
+    "react-addons-css-transition-group": "^15.1.0",
+    "react-addons-transition-group": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-router": "^2.4.1"
   },
