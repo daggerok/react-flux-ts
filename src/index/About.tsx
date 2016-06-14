@@ -5,19 +5,27 @@ import { AboutComponentStyles } from './About.css';
 /**
  * Created by mak on 6/8/16.
  */
-interface Props {
+interface Props {}
+interface State {
   keywords?: string[];
 }
 
-export class About extends React.Component<Props, {}> {
+export class About extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.props.keywords = [
-      'TypeScript',
-      'React',
-      'React Router',
-      'Flux'
-    ];
+    this.state = { keywords: [] };
+  }
+
+  componentWillMount() {
+    this.setState({
+      keywords: [
+        'TypeScript',
+        'React',
+        'React Router',
+        'Flux',
+        '...?'
+      ]
+    });
   }
 
   public render() {
@@ -28,8 +36,7 @@ export class About extends React.Component<Props, {}> {
         <img src="http://cdn.shopify.com/s/files/1/0860/3518/products/rightmeow_comp.jpg?v=1432861786" alt=""/>
         <div style={AboutComponentStyles}>lets learn something</div>
         <ul className="list-style-none">
-          {this.props.keywords.map((keyword, index) => <li key={index}>{keyword}</li>)}
-          <li>...?</li>
+          {this.state.keywords.map((keyword, index) => <li key={index}>{keyword}</li>)}
         </ul>
       </div>
     );

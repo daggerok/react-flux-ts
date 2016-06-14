@@ -11,7 +11,7 @@ import { App } from './index/App';
  * Created by mak on 6/8/16.
  */
 export const routes = (
-  // {/*<Router history={browserHistory}>*/}
+  // <Router history={browserHistory}>
   <Router history={hashHistory} >
     <Route path="/" component={App}>
       <IndexRoute component={Home} />

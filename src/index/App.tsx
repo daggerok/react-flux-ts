@@ -18,9 +18,9 @@ export class App extends React.Component<AppProps, {}> {
             {/* change the <a>s to <Link>s */}
             <ul className="nav navbar-nav" style={headerStyles}>
               <li><a className="navbar-brand" href="/">Brand</a></li>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/authors">Authors</Link></li>
-              <li><Link to="/about">About</Link></li>
+              <li><Link to="home">Home</Link></li>
+              <li><Link to="authors">Authors</Link></li>
+              <li><Link to="about">About</Link></li>
             </ul>
           </div>
         </nav>
