@@ -24,7 +24,9 @@ export const routes = (
       <IndexRedirect to='about'/>
       <Route path="home" component={Home} />
       <Route path="authors" component={AuthorList} />
-      <Route path="transitions" component={Transition} onEnter={Transition.onEnter} onLeave={Transition.onLeave}/>
+      <Route path="transitions" component={Transition}
+             onEnter={Transition.willTransitionTo}
+             onLeave={Transition.willTransitionFrom}/>
       <Route path="about" component={About} />
       {/* redirect from '/redirect-me' to  must be before not found (any other) handler */}
       <Redirect path="redirect-me" to="about" />
