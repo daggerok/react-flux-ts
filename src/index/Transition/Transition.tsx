@@ -1,21 +1,55 @@
 import * as React from 'react';
 
-interface P {}
+interface P {
+}
 interface S {
-  counter: number;
 }
 
 const styles = {
   listStyleType: 'none'
 };
 
+// push('/') 1
+interface R {
+  push(path: string): any;
+}
+interface C {
+  router: R;
+}
+
 export class Transition extends React.Component<P, S> {
+
+  static contextTypes: React.ValidationMap<any> = {
+    router: React.PropTypes.func.isRequired
+  };
+
+  context: C;
+
+  componentDidMount() {
+    this.choose();
+  }
+
+  choose() {
+    if (this.cooseToBeOrNotToBe()) {
+      console.log(`I have to go...`);
+      this.context.router.push('/home');
+    } else {
+      console.log(`let's stay here!`);
+    }
+  }
+
+  cooseToBeOrNotToBe(): boolean {
+    return 0 === Date.now() % 2;
+  }
 
   constructor() {
     super();
 
-    this.state = { counter: 0 };
+    this.state = {
+      toBeOrNotToBe: this.cooseToBeOrNotToBe()
+    };
   }
+  //
 
   componentWillMount() {
     this.routerWillEnter();
@@ -26,26 +60,19 @@ export class Transition extends React.Component<P, S> {
   }
 
   routerWillEnter() {
-    console.log('enter dynamic', this.incrementAndGet());
+    console.log('enter dynamic');
   }
 
   routerWillLeave() {
-    console.log('leave dynamic', this.incrementAndGet());
-  }
-
-  incrementAndGet(): number {
-    this.setState({
-      counter: this.state.counter + 1
-    });
-    return this.state.counter;
+    console.log('leave dynamic');
   }
 
   static willTransitionTo() {
-    console.log('enter static', Date.now());
+    console.log('enter static');
   }
 
   static willTransitionFrom() {
-    console.log('leave static', Date.now());
+    console.log('leave static');
   }
 
   render() {
