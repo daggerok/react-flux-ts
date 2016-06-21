@@ -64,6 +64,7 @@ module.exports = {
       // react
       {from: 'node_modules/react/dist/react.min.js', to: 'vendor'},
       {from: 'node_modules/react-dom/dist/react-dom.min.js', to: 'vendor'},
+      {from: 'node_modules/flux/dist/Flux.min.js', to: 'vendor'},
       // jquery
       {from: 'node_modules/jquery/dist/jquery.min.js', to: 'vendor'},
       // bootstrap
@@ -86,7 +87,8 @@ module.exports = {
   externals: {
     'react': 'React',
     'react-dom': 'ReactDOM',
-    'jquery': 'jquery'
+    'jquery': 'jquery',
+    'flux': 'Flux'
   },
 
   devServer: {

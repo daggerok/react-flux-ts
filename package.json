@@ -21,7 +21,8 @@
     "typings:rm": "rimraf typings*",
     "typings:init": "typings init ./src",
     "typings:vendor": "typings install --global --save dt~jquery dt~bootstrap",
-    "typings:react": "typings i -G --save dt~react dt~react-dom dt~react-router dt~react-router/history dt~flux",
+    "typings:react": "typings install --global --save dt~react dt~react-dom dt~react-router dt~react-router/history",
+    "typings:flux": "typings install --global --save dt~flux dt~fbemitter dt~immutable",
     "typings:transition": "typings install --global --save dt~react-addons-transition-group dt~react-addons-css-transition-group",
     "commit": "commit-wizard"
   },
@@ -65,7 +66,9 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.6",
+    "fbemitter": "^2.0.2",
     "flux": "^2.1.1",
+    "immutable": "^3.8.1",
     "jquery": "^3.0.0",
     "react": "^15.1.0",
     "react-addons-css-transition-group": "^15.1.0",
