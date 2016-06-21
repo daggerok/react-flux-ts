@@ -7,8 +7,7 @@ import { AuthorService } from './AuthorService';
 /**
  * Created by mak on 6/12/16.
  */
-interface Props {
-}
+interface Props {}
 
 export interface State {
   authors: AuthorDTO[];

@@ -1,9 +1,7 @@
 import * as React from 'react';
 
-interface P {
-}
-interface S {
-}
+interface P {}
+interface S {}
 
 const styles = {
   listStyleType: 'none'

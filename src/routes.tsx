@@ -4,7 +4,7 @@ import { Router, Route, IndexRoute, browserHistory, Redirect, IndexRedirect } fr
 
 import { About } from './index/About';
 import { Home } from './index/Home';
-import { AuthorList } from './index/Author';
+import { AuthorList } from './index/Author/AuthorList';
 import { App } from './index/App';
 import { NotFound } from './index/404';
 import { Transition } from './index/Transition';
