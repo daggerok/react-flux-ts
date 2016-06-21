@@ -5,6 +5,8 @@ react-flux-ts [![build](https://travis-ci.org/daggerok/react-flux-ts.svg?branch=
 git clone --depth=1 --branch=master https://github.com/daggerok/react-flux-ts.git react-flux-ts
 cd $_
 npm start
+npm run dev
+npm run serve
 ```
 
 links:

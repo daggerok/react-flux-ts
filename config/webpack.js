@@ -14,10 +14,10 @@ module.exports = {
   },
 
   output: {
-    path: './dist',
-    filename: '[name].bundle.js',
+    path: './dist/',
+    filename: '/[name].js',
     // save maps outside build folder
-    sourceMapFilename: 'maps/[file].map'
+    sourceMapFilename: '/maps[file].map'
   },
 
   resolve: {
@@ -68,10 +68,11 @@ module.exports = {
       // jquery
       {from: 'node_modules/jquery/dist/jquery.min.js', to: 'vendor'},
       // bootstrap
+      {from: 'node_modules/bootstrap/dist/js/bootstrap.min.js', to: 'vendor/bootstrap'},
       {from: 'node_modules/bootstrap/dist/css/bootstrap.min.css', to: 'vendor/bootstrap'},
       {from: 'node_modules/bootstrap/dist/fonts', to: 'vendor/bootstrap'}
     ]),
-    new ExtractTextPlugin('app.bundle.css'),
+    new ExtractTextPlugin('/app.css'),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.optimize\.css$/g,
       cssProcessor: require('cssnano'),

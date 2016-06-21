@@ -1,6 +1,6 @@
 import * as React from 'react';
-// import { Router, Route, IndexRoute, browserHistory, Redirect, IndexRedirect } from 'react-router';
-import { Router, Route, IndexRoute, hashHistory, Redirect, IndexRedirect } from 'react-router';
+import { Router, Route, IndexRoute, browserHistory, Redirect, IndexRedirect } from 'react-router';
+// import { Router, Route, IndexRoute, hashHistory, Redirect, IndexRedirect } from 'react-router';
 
 import { About } from './index/About';
 import { Home } from './index/Home';
@@ -14,9 +14,9 @@ import { Transition } from './index/Transition';
  */
 export const routes = (
   /*
-  <Router history={browserHistory}>
-   */
   <Router history={hashHistory}>
+   */
+  <Router history={browserHistory}>
     <Route path="/" component={App}>
       {/* specify component for root '/' */}
       <IndexRoute component={Home} />
